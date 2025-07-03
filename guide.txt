@@ -1,0 +1,17 @@
+//comando de subir a API
+uvicorn workout_api.main:app --reload
+
+//criar migracao
+alembic revision --autogenerate -m "init_db"
+
+//rodar migracao
+alembic upgrade head
+
+//ativar script
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+//ativar ambiente venv
+.\venv\Scripts\Activate.ps1   
+
+//rodar docker postgree
+docker compose up -d
